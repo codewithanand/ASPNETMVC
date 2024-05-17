@@ -1,0 +1,36 @@
+﻿@model Category
+
+<div class="row pt-4 mb-3">
+    <div class="col-6">
+        <h3>Edit Category</h3>
+    </div>
+    <div class="col-6 text-end">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <form asp-controller="Category" asp-action="Edit" method="post">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="CategoryName" placeholder="Category Name" class="form-control" />
+                <label asp-for="CategoryName"></label>
+                <span class="text-danger" asp-validation-for="CategoryName"></span>
+
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="DisplayOrder" placeholder="Display Order" class="form-control" />
+                <label asp-for="DisplayOrder"></label>
+                <span class="text-danger" asp-validation-for="DisplayOrder"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary px-5">Save</button>
+                <a class="btn btn-outline-danger" asp-controller="Category" asp-action="Index">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
